@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/*Default Styling*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Montserrat',
+        sans-serif;
+    background-color: black;
+    overflow: hidden;
+}
+
+nav,
+.nav-links-container {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    background-color: #edeef0;
+    min-height: 8vh;
+    padding: 0 50px;
+}
+
+.nav-links-container {
+    list-style: none;
+    width: 40%;
+
+}
+
+.nav-links-container li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+}
+
+
+
+#logo {
+    color: #f05136;
+    font-size: 2.2em;
+}
+
+/*Burger*/
+.burger div {
+    background-color: black;
+    height: 3px;
+    width: 25px;
+    margin: 5px;
+}
+
+.burger {
+    display: none;
+}
+
+@media screen and (max-width:768px) {
+    .burger {
+        display: block;
+    }
+
+    .nav-links-container li {
+        opacity: 0;
+    }
+
+    .nav-links-container {
+        position: absolute;
+        right: 0;
+        top: 8vh;
+        height: 92vh;
+        background-color: #edeef0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 50%;
+        transform: translateX(100%);
+    }
+
+    .nav-clicked {
+        transform: translateX(0%);
+    }
+
+}
+
+.burger-clicked #line1 {
+    transform: rotate(45deg) translateX(5px);
+}
+
+.burger-clicked #line2 {
+    display: none;
+}
+
+.burger-clicked #line3 {
+    transform: rotate(-45deg) translateX(5px);
+}
+
+/*Animations*/
+@keyframes navLinkAnimation {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.content {
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    animation-name: my-animation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes my-animation {
+    0% {
+        color: red;
+    }
+
+    25% {
+        color: green;
+    }
+
+    50% {
+        color: blue;
+    }
+
+    75% {
+        color: yellow;
+    }
+
+    100% {
+        color: pink;
+    }
+}
